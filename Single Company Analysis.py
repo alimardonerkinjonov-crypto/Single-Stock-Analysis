@@ -21,8 +21,8 @@ from pathlib import Path
 # Folder where all CSV, PNG, and HTML outputs will be saved.
 # Setup the exact target folder destination path [CHANGE THIS TO YOUR OWN FOLDER PATH]
 desktop_path = Path.home() / "Desktop"
-output_folder = desktop_path / "Single Stock Analysis."
-os.makedirs(output_folder, exist_ok=True)
+OUTPUT_FOLDER = desktop_path / "Single Stock Analysis."
+os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
 # Accepted positive answers when confirming the matched company.
 AFFIRMATIVES = {

@@ -14,29 +14,25 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 import yfinance as yf
-
-
+from pathlib import Path
 # =============================================================================
 # CONFIGURATION
 # =============================================================================
-
 # Folder where all CSV, PNG, and HTML outputs will be saved.
-OUTPUT_FOLDER = "d:/Alimardon/Python/Capstone Project"
-os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+# Setup the exact target folder destination path [CHANGE THIS TO YOUR OWN FOLDER PATH]
+desktop_path = Path.home() / "Desktop"
+output_folder = desktop_path / "Single Stock Analysis."
+os.makedirs(output_folder, exist_ok=True)
 
 # Accepted positive answers when confirming the matched company.
 AFFIRMATIVES = {
     "y", "yes", "yeah", "yep", "yea", "yup", "ja", "ok", "okay", "sure",
     "correct", "affirmative", "exactly", "that's right", "thats right",
     "you got it", "right on", "absolutely", "definitely", "indeed",
-    "totally", "right", "true", "perfect", "fine", "certainly",
-}
-
-
+    "totally", "right", "true", "perfect", "fine", "certainly",}
 # =============================================================================
 # HELPER FUNCTIONS
 # =============================================================================
-
 def safe_filename(text):
     """Convert a chart title or company name into a safe file name."""
     cleaned_text = re.sub(r"[^\w\s.-]", "", text)
